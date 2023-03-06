@@ -1,0 +1,21 @@
+<ul>
+    <li [class.active]="viewMode=='map'">
+        <button mat-raised-button color="primary" (click)="viewMode='map'">Map View</button>
+    </li>
+    <li [class.active]="viewMode=='list'"><button mat-raised-button color="primary" (click)="viewMode='list'">List
+            View</button></li>
+    <li [class.active]="viewMode=='mobile'"> <button mat-raised-button color="primary"
+            (click)="viewMode='mobile'">Mobile
+            View</button></li>
+    <li [class.active]="viewMode=='laptop'"> <button mat-raised-button color="primary"
+            (click)="viewMode='laptop'">laptop
+            View content </button></li>
+
+</ul>
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">Map View Content</div>
+    <div *ngSwitchCase="'list'">List View Content</div>
+    <div *ngSwitchCase="'mobile'">Mobile view content</div>
+    <div *ngSwitchCase="'laptop'"> Laptop view content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+</div>

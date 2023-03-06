@@ -1,0 +1,32 @@
+<div class="container">
+    <mat-card>
+        <mat-card-header>Login Here</mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="loginForm">
+                <mat-form-field appearance="outline">
+                    <mat-label>UserId</mat-label>
+                    <input matInput placeholder="Enter your UserId" formControlName="userId">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Select position</mat-label>
+                    <mat-select formControlName="position">
+                        <mat-option value="admin">Admin</mat-option>
+                        <mat-option value="user">User</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-footer>
+            <button mat-button color="accent" mat-dialog-close="Cancel">Cancel</button>
+            <button mat-button color="primary" (click)="saveLogInForm()">LogIn</button>
+        </mat-card-footer>
+    </mat-card>
+</div>
