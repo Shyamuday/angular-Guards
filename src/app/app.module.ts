@@ -19,6 +19,8 @@ import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SwitchDirectiveComponent } from './switch-directive/switch-directive.component';
+import { RegisterComponent } from './register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     UserComponent,
     AdminComponent,
+    SwitchDirectiveComponent,
+    RegisterComponent,
   ],
   imports: [
     MatDialogModule,

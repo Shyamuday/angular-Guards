@@ -1,0 +1,61 @@
+<ul>
+    <li [class.active]="viewMode=='map'">
+        <button mat-raised-button color="primary" (click)="viewMode='map'">Map View</button>
+    </li>
+    <li [class.active]="viewMode=='list'"><button mat-raised-button color="primary" (click)="viewMode='list'">List
+            View</button></li>
+    <li [class.active]="viewMode=='mobile'"> <button mat-raised-button color="primary"
+            (click)="viewMode='mobile'">Mobile
+            View</button></li>
+    <li [class.active]="viewMode=='laptop'"> <button mat-raised-button color="primary"
+            (click)="viewMode='laptop'">laptop
+            View content </button></li>
+</ul>
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">Map View Content</div>
+    <div *ngSwitchCase="'list'">List View Content</div>
+    <div *ngSwitchCase="'mobile'">Mobile view content</div>
+    <div *ngSwitchCase="'laptop'"> Laptop view content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+</div>
+<input type="hidden" #place>
+<button mat-flat-button color="accent" (click)="place.value = 'pune'">Pune</button>
+<button mat-flat-button color="accent" (click)="place.value = 'bangluru'">Bangluru</button>
+<button mat-flat-button color="accent" (click)="place.value = 'mumbai'">Mumbai</button>
+
+<div [ngSwitch]="place.value">
+
+    <pre *ngSwitchCase="'pune'">I am In Pune</pre>
+    <pre *ngSwitchCase="'bangluru'">I am in Bangluru</pre>
+    <pre *ngSwitchCase="'mumbai'">I am in Mumbai</pre>
+    <pre *ngSwitchDefault>Select city</pre>
+</div>
+
+<!-- 
+<input type="hidden" #selection>
+<button (click)="selection.value = 'component'"> New Component</button>
+<button (click)="selection.value = 'material'">Angular Material</button>
+<button (click)="selection.value = 'pwa'">Add PWA Support</button>
+<div [ngSwitch]="selection.value">
+    <pre *ngSwitchDefault>ng generate component xyz</pre>
+    <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
+    <pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>
+</div> -->
+
+
+<h4>Example use of ngSwitch ,ngSwitchCase,ngSwitchDefault</h4>
+
+<select (change)="numberChange($event)">
+    <option value="one">One</option>
+    <option value="two">Two</option>
+    <option value="three">Three</option>
+    <option value="four">Four</option>
+</select>
+
+<div [ngSwitch]="chooseValue">
+    <h3 *ngSwitchCase="'one'">1</h3>
+    <h3 *ngSwitchCase="'two'">2</h3>
+    <h3 *ngSwitchCase="'three'">3</h3>
+    <h3 *ngSwitchCase="'four'">4</h3>
+    <h3 *ngSwitchDefault>Default</h3>
+</div>
