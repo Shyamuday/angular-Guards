@@ -21,6 +21,8 @@ import { AdminComponent } from './admin/admin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SwitchDirectiveComponent } from './switch-directive/switch-directive.component';
 import { RegisterComponent } from './register/register.component';
+import { EnhancedNgForComponent } from './enhanced-ng-for/enhanced-ng-for.component';
+import { NgForEmptyDirective } from './ng-for-empty.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,10 +33,12 @@ import { RegisterComponent } from './register/register.component';
     AdminComponent,
     SwitchDirectiveComponent,
     RegisterComponent,
+    EnhancedNgForComponent,
+    NgForEmptyDirective,
   ],
   imports: [
     MatDialogModule,
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
